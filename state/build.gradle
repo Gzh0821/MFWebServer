@@ -5,7 +5,7 @@ dependencies {
     compileOnly "org.slf4j:slf4j-api:${slf4j}"
     compileOnly "com.google.guava:guava:${guava}"
     compileOnly "org.springframework:spring-context"
-    compileOnly project(path: ":monkey-commons")
+    compileOnly project(path: ":commons")
 }
 
 test {

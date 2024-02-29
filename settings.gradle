@@ -1,19 +1,17 @@
-rootProject.name = 'fat-monkey'
-include 'monkey-orm'
-include 'monkey-spring'
-include 'monkey-extension'
-include 'monkey-commons'
-include 'monkey-state'
+rootProject.name = 'MF-WebServer'
 
-include 'monkey-orm'
-include 'monkey-orm-reactive'
+include 'orm'
+include 'spring'
+include 'extension'
+include 'commons'
+include 'state'
 
-include 'monkey-socket-commons'
-include 'monkey-socket'
+include 'orm'
+include 'orm-reactive'
 
-include 'monkey-test'
-include 'monkey-socket-server'
-include 'monkey-data-sync-server'
-include 'monkey-data-proto'
-include 'monkey-state-reactive'
+include 'socket'
+
+include 'test'
+include 'data-proto'
+include 'gateway'
 
