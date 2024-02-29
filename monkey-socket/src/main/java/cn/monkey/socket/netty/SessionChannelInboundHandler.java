@@ -13,7 +13,6 @@ public abstract class SessionChannelInboundHandler<I, Pkg> extends SimpleChannel
 
     protected final FilterChain<Pkg> filterChain;
 
-    @Nullable
     protected final Dispatcher<Pkg> dispatcher;
 
     public SessionChannelInboundHandler(NettySessionManager nettySessionManager,

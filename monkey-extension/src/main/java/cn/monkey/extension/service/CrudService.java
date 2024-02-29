@@ -6,8 +6,10 @@ import cn.monkey.commons.data.vo.Result;
 import cn.monkey.spring.web.data.ExtensionQueryRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 public interface CrudService<ID extends Serializable, Q extends QueryRequest, D, R> {
 
@@ -15,8 +17,16 @@ public interface CrudService<ID extends Serializable, Q extends QueryRequest, D,
         throw new UnsupportedOperationException();
     }
 
-    default Result<R> read(ExtensionQueryRequest authQueryRequest, Q queryRequest) {
+    default Result<R> readOne(ExtensionQueryRequest authQueryRequest, Q queryRequest) {
         throw new UnsupportedOperationException();
+    }
+
+    default Result<Collection<R>> read(ExtensionQueryRequest extensionQueryRequest, Q queryRequest, Sort sort) {
+        throw new UnsupportedOperationException();
+    }
+
+    default Result<Collection<R>> read(ExtensionQueryRequest extensionQueryRequest, Q queryRequest) {
+        return read(extensionQueryRequest, queryRequest, Sort.unsorted());
     }
 
     default Result<Page<R>> read(ExtensionQueryRequest authQueryRequest, Q queryRequest, Pageable pageable) {

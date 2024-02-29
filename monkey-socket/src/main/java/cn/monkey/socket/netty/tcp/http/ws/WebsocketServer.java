@@ -1,7 +1,7 @@
 package cn.monkey.socket.netty.tcp.http.ws;
 
+import cn.monkey.socket.netty.tcp.TcpServer;
 import cn.monkey.socket.util.ChannelHandlerUtils;
-import cn.monkey.socket.netty.ServerTransport;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -13,7 +13,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 
 import java.net.InetSocketAddress;
 
-public class WebsocketServer extends ServerTransport<WebsocketServer> {
+public class WebsocketServer extends TcpServer {
     private WebsocketServer() {
         this.channelOption(ChannelOption.SO_KEEPALIVE, true)
                 .configuration()
@@ -41,7 +41,7 @@ public class WebsocketServer extends ServerTransport<WebsocketServer> {
         this.configuration().mutate().doOnChannelInit(channel ->
                 channel.pipeline()
                         .addLast(new WebSocketServerProtocolHandler(protocol)));
-        return duplicate();
+        return (WebsocketServer) duplicate();
     }
 
 

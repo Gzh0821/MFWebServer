@@ -3,12 +3,15 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     compileOnly project(path: ":monkey-commons")
     implementation project(path: ":monkey-orm")
+    implementation project(path: ":monkey-orm-reactive")
     implementation project(path: ":monkey-spring")
     compileOnly "org.springframework:spring-core"
 
     compileOnly "org.mapstruct:mapstruct:${mapstruct}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct}"
     compileOnly "org.springframework.data:spring-data-commons"
+
+    compileOnly "io.projectreactor:reactor-core:${reactor}"
 }
 
 test {

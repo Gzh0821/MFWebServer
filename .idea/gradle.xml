@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../programs/gradle/gradle-8.5" />
+        <option name="gradleJvm" value="17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/monkey-commons" />
+            <option value="$PROJECT_DIR$/monkey-data-proto" />
+            <option value="$PROJECT_DIR$/monkey-data-sync-server" />
+            <option value="$PROJECT_DIR$/monkey-extension" />
+            <option value="$PROJECT_DIR$/monkey-orm" />
+            <option value="$PROJECT_DIR$/monkey-orm-reactive" />
+            <option value="$PROJECT_DIR$/monkey-socket" />
+            <option value="$PROJECT_DIR$/monkey-socket-commons" />
+            <option value="$PROJECT_DIR$/monkey-socket-server" />
+            <option value="$PROJECT_DIR$/monkey-spring" />
+            <option value="$PROJECT_DIR$/monkey-state" />
+            <option value="$PROJECT_DIR$/monkey-state-reactive" />
+            <option value="$PROJECT_DIR$/monkey-test" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
