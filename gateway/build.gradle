@@ -1,17 +1,42 @@
 plugins {
+    id 'org.graalvm.buildtools.native' version "${graalvm_buildtools_native}"
     id 'java'
 }
 
-group = 'cn.monkey'
-version = '1.0-SNAPSHOT'
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation "com.google.guava:guava:${guava}"
+    implementation "com.github.ben-manes.caffeine:caffeine:${caffeine}"
+    implementation "com.google.code.gson:gson:${gson}"
+    implementation "com.lmax:disruptor:${disruptor}"
+    //implementation fileTree(includes: ['*.jar'], dir: rootProject.projectDir.path + '/libs')
 
-repositories {
-    mavenCentral()
+    implementation project(path: ":commons")
+    implementation project(path: ":spring")
+
+    implementation "org.redisson:redisson-spring-boot-starter:${redisson_boot}" exclude(group: "org.yaml", module: "snakeyaml")
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+
+    implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config"
+    implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery"
+
+    implementation "org.springframework.cloud:spring-cloud-starter-gateway"
+    implementation "org.springframework.cloud:spring-cloud-starter-bootstrap"
+    implementation "org.springframework.cloud:spring-cloud-starter-loadbalancer"
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+graalvmNative {
+    useArgFile = false
+    binaries {
+        main {
+            buildArgs.add('--verbose')
+            buildArgs.add("--no-fallback")
+            buildArgs.add("--initialize-at-build-time=org.apache.commons.logging.LogFactory")
+            buildArgs.add("-H:ReflectionConfigurationFiles=$projectDir/src/main/resources/META-INF/native-image/reflect-config.json")
+            mainClass = "cn.telecom.gateway.Application"
+        }
+    }
 }
 
 test {

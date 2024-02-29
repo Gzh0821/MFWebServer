@@ -17,7 +17,6 @@
             <option value="$PROJECT_DIR$/orm" />
             <option value="$PROJECT_DIR$/orm-reactive" />
             <option value="$PROJECT_DIR$/socket" />
-            <option value="$PROJECT_DIR$/socket-commons" />
             <option value="$PROJECT_DIR$/spring" />
             <option value="$PROJECT_DIR$/state" />
             <option value="$PROJECT_DIR$/test" />
