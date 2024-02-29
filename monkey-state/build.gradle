@@ -1,0 +1,13 @@
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    compileOnly "org.slf4j:slf4j-api:${slf4j}"
+    compileOnly "com.google.guava:guava:${guava}"
+    compileOnly "org.springframework:spring-context"
+    compileOnly project(path: ":monkey-commons")
+}
+
+test {
+    useJUnitPlatform()
+}

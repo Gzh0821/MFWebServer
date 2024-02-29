@@ -1,0 +1,19 @@
+rootProject.name = 'fat-monkey'
+include 'monkey-orm'
+include 'monkey-spring'
+include 'monkey-extension'
+include 'monkey-commons'
+include 'monkey-state'
+
+include 'monkey-orm'
+include 'monkey-orm-reactive'
+
+include 'monkey-socket-commons'
+include 'monkey-socket'
+
+include 'monkey-test'
+include 'monkey-socket-server'
+include 'monkey-data-sync-server'
+include 'monkey-data-proto'
+include 'monkey-state-reactive'
+

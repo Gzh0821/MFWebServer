@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'cn.monkey'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation project(":monkey-socket")
+    implementation project(":monkey-commons")
+
+    implementation "io.netty:netty-all:${netty}"
+    implementation "com.google.code.gson:gson:${gson}"
+    implementation "org.springframework:spring-core"
+    testImplementation "org.slf4j:slf4j-api:${slf4j}"
+}
+
+test {
+    useJUnitPlatform()
+}
