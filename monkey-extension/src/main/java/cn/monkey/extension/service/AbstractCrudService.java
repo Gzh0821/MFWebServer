@@ -9,9 +9,13 @@ import cn.monkey.spring.web.data.ExtensionQueryRequest;
 import org.mapstruct.factory.Mappers;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.util.CollectionUtils;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 public abstract class AbstractCrudService<Q extends QueryRequest, T, ID extends Serializable,
@@ -50,11 +54,20 @@ public abstract class AbstractCrudService<Q extends QueryRequest, T, ID extends 
     }
 
     @Override
-    public Result<R> read(ExtensionQueryRequest request, Q queryRequest) {
+    public Result<R> readOne(ExtensionQueryRequest request, Q queryRequest) {
         return this.requestRepository.selectOneByQueryRequest(queryRequest)
                 .map(this.entityMapper::copyToVo)
                 .map(Results::ok)
                 .orElse(Results.fail("can not find by queryRequest"));
+    }
+
+    @Override
+    public Result<Collection<R>> read(ExtensionQueryRequest extensionQueryRequest, Q queryRequest, Sort sort) {
+        List<T> tList = this.requestRepository.selectByQueryRequest(queryRequest, sort);
+        if (CollectionUtils.isEmpty(tList)) {
+            return Results.fail("can not find by queryRequest");
+        }
+        return Results.ok(tList.stream().map(this.entityMapper::copyToVo).toList());
     }
 
     @Override
