@@ -1,0 +1,14 @@
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly project(path: ":monkey-commons")
+
+    compileOnly "io.netty:netty-all:${netty}"
+    compileOnly "com.google.code.gson:gson:${gson}"
+    compileOnly "org.springframework:spring-core"
+    compileOnly "org.slf4j:slf4j-api:${slf4j}"
+}
+
+test {
+    useJUnitPlatform()
+}

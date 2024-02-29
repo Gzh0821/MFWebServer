@@ -1,0 +1,38 @@
+syntax = "proto3";
+option java_package = "cn.monkey.data.pb";
+option java_generate_equals_and_hash = true;
+option java_outer_classname = "Chat";
+
+
+message User {
+  string id = 1;
+  string name = 2;
+}
+
+enum ContentType {
+  TEXT = 0;
+  VIDEO = 1;
+  AUDIO = 2;
+  FILE = 3;
+}
+
+message Content {
+  ContentType type = 1;
+  bytes val = 2;
+}
+
+message To {
+  string groupId = 1;
+  repeated User users = 2;
+}
+
+message From {
+  User user = 1;
+  string serverId = 2;
+}
+
+message Msg {
+  User from = 1;
+  To to = 2;
+  repeated Content content = 3;
+}
