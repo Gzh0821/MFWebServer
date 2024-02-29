@@ -1,13 +1,9 @@
 package cn.monkey.socket.netty.udp;
 
 
-import cn.monkey.socket.Server;
+import cn.monkey.socket.netty.ServerTransport;
 
-public class UdpServer implements Server {
-    @Override
-    public void start() {
-
-    }
+public class UdpServer extends ServerTransport<UdpServer> {
 
     @Override
     public void stop() {

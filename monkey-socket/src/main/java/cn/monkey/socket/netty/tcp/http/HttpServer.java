@@ -1,4 +1,10 @@
 package cn.monkey.socket.netty.tcp.http;
 
-public class HttpServer {
+import cn.monkey.socket.netty.ServerTransport;
+
+public class HttpServer extends ServerTransport<HttpServer> {
+    @Override
+    public void stop() {
+
+    }
 }
