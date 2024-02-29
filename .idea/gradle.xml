@@ -5,24 +5,22 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../programs/gradle/gradle-8.5" />
-        <option name="gradleJvm" value="17" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../Programe Files/gradle/gradle-8.5" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/monkey-commons" />
-            <option value="$PROJECT_DIR$/monkey-data-proto" />
-            <option value="$PROJECT_DIR$/monkey-data-sync-server" />
-            <option value="$PROJECT_DIR$/monkey-extension" />
-            <option value="$PROJECT_DIR$/monkey-orm" />
-            <option value="$PROJECT_DIR$/monkey-orm-reactive" />
-            <option value="$PROJECT_DIR$/monkey-socket" />
-            <option value="$PROJECT_DIR$/monkey-socket-commons" />
-            <option value="$PROJECT_DIR$/monkey-socket-server" />
-            <option value="$PROJECT_DIR$/monkey-spring" />
-            <option value="$PROJECT_DIR$/monkey-state" />
-            <option value="$PROJECT_DIR$/monkey-state-reactive" />
-            <option value="$PROJECT_DIR$/monkey-test" />
+            <option value="$PROJECT_DIR$/commons" />
+            <option value="$PROJECT_DIR$/data-proto" />
+            <option value="$PROJECT_DIR$/extension" />
+            <option value="$PROJECT_DIR$/gateway" />
+            <option value="$PROJECT_DIR$/orm" />
+            <option value="$PROJECT_DIR$/orm-reactive" />
+            <option value="$PROJECT_DIR$/socket" />
+            <option value="$PROJECT_DIR$/socket-commons" />
+            <option value="$PROJECT_DIR$/spring" />
+            <option value="$PROJECT_DIR$/state" />
+            <option value="$PROJECT_DIR$/test" />
           </set>
         </option>
       </GradleProjectSettings>

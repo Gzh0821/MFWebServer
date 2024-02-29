@@ -1,10 +1,10 @@
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    compileOnly project(path: ":monkey-commons")
-    implementation project(path: ":monkey-orm")
-    implementation project(path: ":monkey-orm-reactive")
-    implementation project(path: ":monkey-spring")
+    compileOnly project(path: ":commons")
+    implementation project(path: ":orm")
+    implementation project(path: ":orm-reactive")
+    implementation project(path: ":spring")
     compileOnly "org.springframework:spring-core"
 
     compileOnly "org.mapstruct:mapstruct:${mapstruct}"
