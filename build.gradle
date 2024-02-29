@@ -10,7 +10,7 @@ wrapper {
 }
 
 static boolean isSpringBootModule(project) {
-    return project.name.endsWith("-server")
+    return ["gateway"].contains(project.name)
 }
 
 

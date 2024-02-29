@@ -1,0 +1,34 @@
+spring:
+  application.name: monkey-gateway
+  cloud:
+    # use discoveryClient instead @see org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitionLocator
+    gateway:
+      discovery.locator:
+        routeIdPrefix: monkey
+      filter:
+        request-rate-limiter:
+          denyEmptyKey: true
+    stream:
+      blacklist:
+        sync:
+          enabled: true
+          dynamic.enabled: true
+      rate-limit:
+        async.enabled: true
+        defaultConfig:
+          permitsPerSecond: 90
+          warmupPeriodMs: 0
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+        namespace: 38d34cba-6199-45e7-b5fc-7f4b284c19b5
+      config:
+        server-addr: http://localhost:8848
+        namespace: 38d34cba-6199-45e7-b5fc-7f4b284c19b5
+        file-extension: yaml
+  servlet.multipart:
+    enabled: true
+    max-file-size: 50MB
+    max-request-size: 100MB
+server:
+  port: 9100
